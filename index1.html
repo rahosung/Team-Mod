@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>덕영고등학교</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/css/demo1.css">
+    <link rel="stylesheet" href="assets/css/images-compare.css"/>
+    <link rel="stylesheet" href="assets/css/img-previewer.css"/>
+    <style>
+    #app {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+        -webkit-column-gap: 15px;
+        -moz-column-gap: 15px;
+        column-gap: 15px;
+    }
+    #app img {
+        width: 100%;
+        box-shadow: 0 2px 10px -5px grey;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+    </style>
+    <link rel='canonical' href='https://www.cssscript.com/demo/image-viewer-lightbox-previewer/' />    
+    <style>
+        .easyui-textbox{width:80px;}
+    </style>
+</head>
+<body>
+    <h2>덕영고등학교</h2>
+    <p>인터넷 쇼핑시, 상품크기를 비교하는 솔루션입니다.</p>
+    <div style="margin:20px 0;"></div>
+    <div class="easyui-layout" style="width:100%;height:600px;">
+        <div data-options="region:'north'" style="height:50px">
+            <div class="easyui-panel" style="padding:5px;">
+                <a href="#" class="easyui-linkbutton" data-options="plain:true">정면</a>
+                <a href="#" class="easyui-linkbutton" data-options="plain:true">좌측면</a>
+                <a href="#" class="easyui-linkbutton" data-options="plain:true">우측면</a>
+                <a href="#" class="easyui-linkbutton" data-options="plain:true">뒷면</a>
+                <a href="#" class="easyui-linkbutton" data-options="plain:true">윗면</a>
+
+                <a href="#" class="easyui-linkbutton js-front-btn" data-options="plain:true">상품1</a>
+                <a href="#" class="easyui-linkbutton js-back-btn" data-options="plain:true">상품2</a>
+                <a href="#" class="easyui-linkbutton js-toggle-btn" data-options="plain:true">토글</a>
+            </div>
+        </div>
+        <div data-options="region:'south',split:true" style="height:50px;">
+            <table>
+                <tr>
+                    <td>가로:</td>
+                    <td><input name="name" class="f1 easyui-textbox" value="2,700"></input></td>
+                    <td>세로:</td>
+                    <td><input name="email" class="f1 easyui-textbox" value="1,200"></input></td>
+                    <td>높이:</td>
+                    <td><input name="phone" class="f1 easyui-textbox" value="1,100"></input></td>
+                </tr>
+            </table>
+        </div>
+        <div data-options="region:'east',split:true" title="상품2" style="width:30%;">
+        </div>
+        <div data-options="region:'west',split:true" title="상품1" style="width:30%;">
+            <div id="app">
+                <img src="assets/img/prdt-1/1.jpg" alt=""/>
+                <img src="assets/img/prdt-1/2.jpg" alt=""/>
+                <img src="assets/img/prdt-1/3.jpg" alt=""/>
+            </div>
+        </div>
+        <div data-options="region:'center',title:'상품크기비교',iconCls:'icon-ok'">
+            <div class="page-container">
+                <div class="js-img-compare">
+                    <div style="display: none;">
+                        <span class="images-compare-label">상품1</span>
+                        <img src="assets/img/01-celine-skowron-before.jpg" alt="상품1">
+                    </div>
+                    <div>
+                        <span class="images-compare-label">상품2</span>
+                        <img src="assets/img/01-celine-skowron-after.jpg" alt="상품2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.images-compare.js"></script>
+<script src="assets/js/img-previewer.min.js"></script>
+<script type="text/javascript">
+const a = new ImgPreviewer('body', {
+    scrollbar: true
+})
+$(function () {
+    var imagesCompareElement = $('.js-img-compare').imagesCompare();
+    var imagesCompare = imagesCompareElement.data('imagesCompare');
+    var events = imagesCompare.events();
+
+    imagesCompare.on(events.changed, function (event) {
+        console.log(events.changed);
+        console.log(event.ratio);
+        if (event.ratio < 0.4) {
+            console.log('We see more than half of the back image');
+        }
+        if (event.ratio > 0.6) {
+            console.log('We see more than half of the front image');
+        }
+
+        if (event.ratio <= 0) {
+            console.log('We see completely back image');
+        }
+
+        if (event.ratio >= 1) {
+            console.log('We see completely front image');
+        }
+    });
+
+    $('.js-front-btn').on('click', function (event) {
+        event.preventDefault();
+        imagesCompare.setValue(1, true);
+    });
+
+    $('.js-back-btn').on('click', function (event) {
+        event.preventDefault();
+        imagesCompare.setValue(0, true);
+    });
+
+    $('.js-toggle-btn').on('click', function (event) {
+        event.preventDefault();
+        if (imagesCompare.getValue() >= 0 && imagesCompare.getValue() < 1) {
+            imagesCompare.setValue(1, true);
+        } else {
+            imagesCompare.setValue(0, true);
+        }
+    });
+});    
+</script>
+</body>
+</html>

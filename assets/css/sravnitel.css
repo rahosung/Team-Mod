@@ -1,0 +1,30 @@
+.sravnitel img{
+  max-width:none;
+}
+
+.sravnitel table{
+  display: table;
+  border-spacing: 2px;
+  box-sizing: unset;
+  -webkit-box-sizing:unset;
+  font-size: 1em;
+}
+
+.sravnitel th{
+  font-weight:bold;
+  text-align:center;
+  padding:0px;
+}
+
+.sravnitel td{
+  padding: 1px 1px 1px 1px;
+  line-height:1;
+}
+
+.sravnitel .divider_handle {
+  /* background-image: url('../images/handle_gray.png');*/
+}
+
+.sravnitel {
+  background:white;
+}
