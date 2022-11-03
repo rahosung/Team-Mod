@@ -1,0 +1,21 @@
+URL입력: <input type="text" id="txtImg">
+<button onclick="fImport()">가져오기</button>
+
+<div>
+    <div id="rst" style="float:left; width: 300px; height: 300px; border: 1px solid;"></div>
+    <div id="lft" style="float:left; width: 300px; height: 300px; border: 1px solid;"></div>
+</div>
+
+
+<script>
+    function fImport(){
+        let txt = document.getElementById("txtImg");
+        let aaa = document.getElementById("rst");
+        aaa.innerHTML = "<img id='img1' style='width:100%;' src='" + txt.value + "' onclick='fCopy()'>";
+    }
+    function fCopy(){
+        let lft = document.getElementById("lft");
+        let img = document.getElementById("img1");
+        lft.innerHTML = "<img style='width:100%;' src='" + img.src + "'>";
+    }
+</script>
