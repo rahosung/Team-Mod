@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Team Mod</title>
     <link rel="stylesheet" href="assets/css/images-compare.css"/>
+    <style>
+        .dark-mode{
+            background-color: black;
+            color:  white;
+        }
+    </style>
 </head>
 <body>
     <div class="js-img-compare">
@@ -19,9 +25,7 @@
     <!--왼쪽 사이드바-->
     <input type="checkbox" id="menuicon">
     <label for="menuicon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <i class="fa-solid fa-circle-right b"></i>
     </label>
     <div class="sidebar_a">
         <div class="sidebar_left">
@@ -41,7 +45,7 @@
                 <div class="img_inputbox"></div>
                 <button class="add-button"
             type="button">
-            Add 
+            ⊕ Add 
         </button>
             </div>
         </div>
@@ -50,9 +54,7 @@
     <!--오른쪽 사이드바-->
     <input type="checkbox" id="menuicon_right">
     <label for="menuicon_right">
-        <span></span>
-        <span></span>
-        <span></span>
+        <i class="fa-solid fa-circle-left b"></i>
     </label>
     <div class="sidebar_b">
         <div class="sidebar_right">
@@ -73,6 +75,13 @@
             </div>
         </div>
     </div>
+<!-- 다크모드 -->
+<div if='dark'>
+    <label class="switch">
+    <input type="checkbox" onclick="customclick()">
+        <span class="slider"></span>
+    </label>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -84,6 +93,13 @@ $(function () {
     var imagesCompareElement = $('.js-img-compare').imagesCompare();
     var imagesCompare = imagesCompareElement.data('imagesCompare');
 });
-</script>   
+</script>
+<!-- 다크모드 -->
+<script>
+    function customclick(){
+        let element = document.body
+        element.classList.toggle("dark-mode");
+    }
+</script>
 </body>
 </html>

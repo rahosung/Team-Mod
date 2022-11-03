@@ -34,7 +34,7 @@
 /* Separator (thin vertical blank line) */
 .images-compare-separator {
     position: absolute;
-    /*background: white;*/
+    background: rgba(0, 0, 0, 0.452);
     height: 100%;
     width: 1px;
     z-index: 4;
@@ -217,7 +217,7 @@ input[id="menuicon"] + label {
     bottom: 400px;
     cursor: pointer;
 }
-input[id="menuicon"] + label span {
+/*input[id="menuicon"] + label span {
     display: block;
     position: absolute;
     width: 100%;
@@ -235,13 +235,13 @@ input[id="menuicon"] + label span:nth-child(2) {
 }
 input[id="menuicon"] + label span:nth-child(3) {
     bottom:0;
-}
+}*/
 input[id="menuicon"]:checked + label {
     z-index: 2;
     left:600px;
 }
 
-input[id="menuicon"]:checked + label span{
+/*input[id="menuicon"]:checked + label span{
     background: #fff;
 }
 input[id="menuicon"]:checked + label span:nth-child(1){
@@ -256,12 +256,12 @@ input[id="menuicon"]:checked + label span:nth-child(2){
 input[id="menuicon"]:checked + label span:nth-child(3){
     bottom: 50%;
     transform: translateY(50%) rotate(-45deg);
-}
+}*/
 
 .sidebar_a{
     width: 700px;
     height: 100%;
-    background: #222;
+    background: gold;
     position:fixed;
     top: 0;
     left: -900px;
@@ -288,7 +288,7 @@ input[id="menuicon_right"] + label {
     bottom: 400px;
     cursor: pointer;
 }
-input[id="menuicon_right"] + label span {
+/*input[id="menuicon_right"] + label span {
     display: block;
     position: absolute;
     height: 5px;
@@ -306,12 +306,12 @@ input[id="menuicon_right"] + label span:nth-child(2) {
 }
 input[id="menuicon_right"] + label span:nth-child(3) {
     bottom:0;
-}
+}*/
 input[id="menuicon_right"]:checked + label {
     z-index: 2;
     right:600px;
 }
-input[id="menuicon_right"]:checked + label span{
+/*input[id="menuicon_right"]:checked + label span{
     background: white;
     width: 50%;
 }
@@ -328,12 +328,12 @@ input[id="menuicon_right"]:checked + label span:nth-child(2){
 input[id="menuicon_right"]:checked + label span:nth-child(3){
     bottom: 69%;
     transform: translateY(50%) rotate(-45deg);
-}
+}*/
 
 .sidebar_b{
     width: 700px;
     height: 100%;
-    background: #222;
+    background: gold;
     position:fixed;
     top: 0px;
     right: -900px;
@@ -356,4 +356,67 @@ input[id="menuicon_right"]:checked +label +div {
     position: fixed;
     bottom: -450px;
     margin: 480px;
+}
+.b {
+    font-size: 50px;
+}
+.add-button {
+    margin-left: 420px;
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.add-button:hover {
+    background-color: white;
+    color: black;
+    transition: background 0.2s ease-in-out;
+}
+
+/* 다크 모드 */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input {display: none;}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    top: 18%;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+input:checked + .slider{
+    background-color: black;
+}
+
+input:checked + .slider::before{
+    transform: translate(100%);
+    top: 18%;
 }
