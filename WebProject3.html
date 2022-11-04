@@ -1,33 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Team Mod</title>
+    <title>layout2</title>
     <link rel="stylesheet" href="assets/css/images-compare.css"/>
-
 </head>
 
 <body>
-
-<div id="wrap" style="width: 100%; height: 100%; margin: 0 auto;">
-
-    <header id="mori" style="height: 20%; width: 100%;">
-        <b>TeamMod</b>
+    <div id="wrap">
+        <header>
+            <b>TeamMod</b>
         <br>
         <!-- 다크모드 -->
-<div class="rightdark">
-    <div if='dark'>
-        <label class="switch">
-        <input type="checkbox" onclick="customclick()">
-            <span class="slider"></span>
-        </label>
-    </div>
-</div>
-    </header>
+            <div class="rightdark">
+                <div if='dark'>
+                    <label class="switch">
+                    <input type="checkbox" onclick="customclick()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </header>
 
-<main class="mid" style="float: left; width: 100%; height: 700px;">
-    <aside id="left-aside" style="float: left; width: 9%; height: 100%;">
-        <input type="checkbox" id="menuicon">
+        <aside>
+            <input type="checkbox" id="menuicon">
         <label for="menuicon">
             <i class="fa-solid fa-circle-right b"></i>
         </label>
@@ -56,23 +52,23 @@
             </div>
         </div>
     </div>
-</aside>
+        </aside>
 
-<section>
-        <div class="js-img-compare" style="float: left; border: 3px solid rgb(0, 0, 0); width: 80%; height: 70%;">
-            <div style="display: none;">
-                <span class="images-compare-label">상품1</span>
-                <img src="kick/moddd.jpeg" style= "height:500px; width:600px;" alt="상품1">
+        <section>
+            <div class="js-img-compare" style="float: left; border: 3px solid rgb(0, 0, 0); width: 90%; height: 90%;">
+                <div style="display: none;">
+                    <span class="images-compare-label">상품1</span>
+                    <img src="kick/moddd.jpeg" style= "height:500px; width:600px;" alt="상품1">
+                </div>
+                <div>
+                    <span class="images-compare-label">상품2</span>
+                    <img src="kick/llgg.jpeg" style= "height:500px; width:600px;" alt="상품2">
+                </div>
             </div>
-            <div>
-                <span class="images-compare-label">상품2</span>
-                <img src="kick/llgg.jpeg" style= "height:500px; width:600px;" alt="상품2">
-            </div>
-        </div>
-    </section>
+        </section>
 
-<aside id="right-aside" style="position: absolute; float: right; width: 9%; height: 100%; background-color: rgb(255, 164, 255);">
-        <input type="checkbox" id="menuicon_right">
+        <article>
+            <input type="checkbox" id="menuicon_right">
         <label for="menuicon_right">
             <i class="fa-solid fa-circle-left b"></i>
         </label>
@@ -96,17 +92,12 @@
                 </div>
             </div>
         </div>
-</aside>
+        </article>
 
-</main>
+        <footer></footer>
+    </div>
 
-<footer style="position: fixed; float: left; height: 100%; width: 100%;">
-
-</footer>
-
-</div>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="assets/js/jquery.images-compare.js"></script>
 <script src="https://kit.fontawesome.com/b1cf78c6ff.js" crossorigin="anonymous"></script>
