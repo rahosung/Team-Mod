@@ -42,28 +42,6 @@
     top: 0;
 }
 
-/* Drag handle (circle) */
-.images-compare-handle {
-    height: 38px;
-    width: 38px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -22px;
-    margin-top: -22px;
-    /*border: 3px solid white;
-    -webkit-border-radius: 1000px;
-    -moz-border-radius: 1000px;
-    border-radius: 1000px;
-    -webkit-box-shadow: 0 0 12px rgba(51, 51, 51, 0.5);
-    -moz-box-shadow: 0 0 12px rgba(51, 51, 51, 0.5);
-    box-shadow: 0 0 12px rgba(51, 51, 51, 0.5);
-    z-index: 3;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.7);*/
-    cursor: pointer;
-}
-
 /* Drag handle arrows */
 .images-compare-left-arrow, .images-compare-right-arrow {
     width: 0;
@@ -73,18 +51,6 @@
     top: 50%;
     margin-top: -6px;
 }
-
-/*.images-compare-left-arrow {
-    border-right: 6px solid white;
-    left: 50%;
-    margin-left: -17px;
-}
-
-.images-compare-right-arrow {
-    border-left: 6px solid white;
-    right: 50%;
-    margin-right: -17px;
-}*/
 
 /* Label */
 .images-compare-label {
@@ -118,6 +84,18 @@
     right: 10px;
 }
 
+#aside-left{
+    margin: auto;
+    
+
+
+}
+
+#aside-right{
+    
+    position: relative;
+
+}
 /*search menu*/
 .boxContainer_left {
     margin: auto;
@@ -217,46 +195,11 @@ input[id="menuicon"] + label {
     bottom: 400px;
     cursor: pointer;
 }
-/*input[id="menuicon"] + label span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    border-radius: 30px ;
-    background: #000;
-    transition: all .35s;
-}
-input[id="menuicon"] + label span:nth-child(1) {
-    top: 0;
-}
-input[id="menuicon"] + label span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-input[id="menuicon"] + label span:nth-child(3) {
-    bottom:0;
-}*/
+
 input[id="menuicon"]:checked + label {
     z-index: 2;
     left:600px;
 }
-
-/*input[id="menuicon"]:checked + label span{
-    background: #fff;
-}
-input[id="menuicon"]:checked + label span:nth-child(1){
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-input[id="menuicon"]:checked + label span:nth-child(2){
-    top: 50%;
-    left : 10px;
-    width: 70%;
-}
-input[id="menuicon"]:checked + label span:nth-child(3){
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
-}*/
 
 .sidebar_a{
     width: 700px;
@@ -288,47 +231,12 @@ input[id="menuicon_right"] + label {
     bottom: 400px;
     cursor: pointer;
 }
-/*input[id="menuicon_right"] + label span {
-    display: block;
-    position: absolute;
-    height: 5px;
-    width: 100%;
-    border-radius: 30px ;
-    background: #000;
-    transition: all .35s;
-}
-input[id="menuicon_right"] + label span:nth-child(1) {
-    top: 0;
-}
-input[id="menuicon_right"] + label span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-input[id="menuicon_right"] + label span:nth-child(3) {
-    bottom:0;
-}*/
+
 input[id="menuicon_right"]:checked + label {
     z-index: 2;
     right:600px;
 }
-/*input[id="menuicon_right"]:checked + label span{
-    background: white;
-    width: 50%;
-}
-input[id="menuicon_right"]:checked + label span:nth-child(1){
-    top: 69%;
-    transform: translateY(-50%) rotate(45deg);
-}
-input[id="menuicon_right"]:checked + label span:nth-child(2){
-    top: 50%;
-    right: 10px;
-    width: 70%;
-    
-}
-input[id="menuicon_right"]:checked + label span:nth-child(3){
-    bottom: 69%;
-    transform: translateY(50%) rotate(-45deg);
-}*/
+
 
 .sidebar_b{
     width: 700px;
@@ -419,4 +327,17 @@ input:checked + .slider{
 input:checked + .slider::before{
     transform: translate(100%);
     top: 18%;
+}
+
+.dark-mode{
+    background-color: black;
+    color:  white;
+}
+
+#mori {
+    font-size: 50px;
+}
+
+.switch {
+    margin-left: 1800px;
 }

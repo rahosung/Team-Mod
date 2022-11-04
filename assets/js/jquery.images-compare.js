@@ -213,8 +213,8 @@
         function patchSize() {
             var imgRef = backElement.find('img').first();
             setSize(imgRef.width(), imgRef.height(), imgRef.naturalWidth(), imgRef.naturalHeight());
-            element.css('max-width', size.maxWidth + 'px');
-            element.css('max-height', size.maxHeight + 'px');
+            //element.css('max-width', size.maxWidth + 'px');
+            //element.css('max-height', size.maxHeight + 'px');
             frontElement.width(size.width);
             frontElement.height(size.height);
         }
