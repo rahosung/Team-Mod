@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="assets/css/images-compare.css"/>
 </head>
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="assets/js/jquery.images-compare.js"></script>
+<script src="https://kit.fontawesome.com/b1cf78c6ff.js" crossorigin="anonymous"></script>
+
 <body>
     <div id="wrap">
         <header>
@@ -34,28 +39,31 @@
                     <table class="elementsContainer_left">
                         <tr>
                             <td>
-                                <input type="text" placeholder="URL 입력(left)"
+                                <input type="text" id="txtImg" placeholder="URL 입력(left)"
                                 class="search">
                             </td>
                             <td>
-                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                                <a href="#"><i onclick="fImport()" class="fa-solid fa-magnifying-glass"></i>
                                 </a>
                             </td>
                         </tr>
                     </table>
-                    <div class="img_inputbox"></div>
+
+                    <div id="rst" class="img_inputbox"></div>
+
                     <button class="add-button"
-                type="button">
-                ⊕ Add 
-            </button>
+                    type="button">
+                    ⊕ Add 
+                    </button>
+
                 </div>
             </div>
         </div>
-    </div>
+    
         </aside>
 
         <section>
-            <div class="js-img-compare" style="float: left; border: 3px solid rgb(0, 0, 0); width: 90%; height: 90%;">
+            <div class="js-img-compare" style="position: relative; float: left; border: 3px solid rgb(0, 0, 0); width: 100%; height: 100%;">
                 <div style="display: none;">
                     <span class="images-compare-label">상품1</span>
                     <img src="kick/moddd.jpeg" style= "height:500px; width:600px;" alt="상품1">
@@ -88,31 +96,43 @@
                             </td>
                         </tr>
                     </table>
+
                     <div class="img_inputbox"></div>
+
                 </div>
             </div>
         </div>
         </article>
 
         <footer></footer>
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="assets/js/jquery.images-compare.js"></script>
-<script src="https://kit.fontawesome.com/b1cf78c6ff.js" crossorigin="anonymous"></script>
 <script>
 $(function () {
     var imagesCompareElement = $('.js-img-compare').imagesCompare();
     var imagesCompare = imagesCompareElement.data('imagesCompare');
 });
-</script>
-<!-- 다크모드 -->
-<script>
-    function customclick(){
-        let element = document.body
-        element.classList.toggle("dark-mode");
-    }
+
+/*다크모드*/
+function customclick(){
+    let element = document.body
+    element.classList.toggle("dark-mode");
+}
+
+/*돋보기 버튼 누르면 이미지 삽입*/
+function fImport(){
+    let txt = document.getElementById("txtImg");
+    let aaa = document.getElementById("rst");
+    aaa.innerHTML = "<img id='img1' style='width:100%;' src='" + txt.value + "' onclick='fCopy()'>";
+}
+
+/*이미지클릭하면 복사됨*/
+function fCopy(){
+    let lft = document.getElementById("lft");
+    let img = document.getElementById("img1");
+    lft.innerHTML = "<img style='width:100%;' src='" + img.src + "'>";
+}
 </script>
 </body>
 </html>
