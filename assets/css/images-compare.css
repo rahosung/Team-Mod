@@ -86,9 +86,6 @@
 
 #aside-left{
     margin: auto;
-    
-
-
 }
 
 #aside-right{
@@ -199,6 +196,7 @@ input[id="menuicon"] + label {
 input[id="menuicon"]:checked + label {
     z-index: 2;
     left:600px;
+    transform: scaleX(-1);
 }
 
 .sidebar_a{
@@ -235,6 +233,7 @@ input[id="menuicon_right"] + label {
 input[id="menuicon_right"]:checked + label {
     z-index: 2;
     right:600px;
+    transform: scaleX(-1);
 }
 
 
@@ -247,6 +246,7 @@ input[id="menuicon_right"]:checked + label {
     right: -900px;
     z-index: 1;
     transition: all .35s;
+    overflow: scroll;
 }
 input[id="menuicon_right"]:checked +label +div {
     right:0;
