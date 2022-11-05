@@ -6,11 +6,18 @@
     <link rel="stylesheet" href="assets/css/images-compare.css"/>
 </head>
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="assets/js/jquery.images-compare.js"></script>
+<script src="https://kit.fontawesome.com/b1cf78c6ff.js" crossorigin="anonymous"></script>
+
 <body>
     <div id="wrap">
+        <!--해더-->
         <header>
             <b>TeamMod</b>
         <br>
+
         <!-- 다크모드 -->
             <div class="rightdark">
                 <div if='dark'>
@@ -22,96 +29,114 @@
             </div>
         </header>
 
+        <!--왼쪽 사이드바-->
         <aside>
             <input type="checkbox" id="menuicon">
-        <label for="menuicon">
-            <i class="fa-solid fa-circle-right b"></i>
-        </label>
+            <label for="menuicon">
+                <i class="fa-solid fa-circle-right b"></i>
+            </label>
 
-        <div class="sidebar_a">
-            <div class="sidebar_left">
-                <div class="boxContainer_left">
-                    <table class="elementsContainer_left">
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="URL 입력(left)"
-                                class="search">
-                            </td>
-                            <td>
-                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="img_inputbox"></div>
-                    <button class="add-button"
-                type="button">
-                ⊕ Add 
-            </button>
+            <div class="sidebar_a">
+                <div class="sidebar_left">
+                    <div class="boxContainer_left">
+                        <table class="elementsContainer_left">
+                            <tr>
+                                <td>
+                                    <input type="text" id="txtImg" placeholder="URL 입력(left)"
+                                    class="search">
+                                </td>
+                                <td>
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="fImport()"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div id="imgBox" class="img_inputbox"></div>
+
+                        <button class="add-button"
+                            type="button"
+                            onclick="fCopy()">
+                            ⊕ Add 
+                        </button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
         </aside>
 
+        <!--비교창-->
         <section>
             <div class="js-img-compare" style="position: relative; float: left; border: 3px solid rgb(0, 0, 0); width: 100%; height: 100%;">
                 <div style="display: none;">
-                    <span class="images-compare-label">상품1</span>
-                    <img src="kick/moddd.jpeg" style= "height:500px; width:600px;" alt="상품1">
+                    <span id="lft" class="images-compare-label">상품1</span>
+                    <img src="kick/kick1.png" style= "height:500px; width:600px;" alt="상품1">
                 </div>
                 <div>
                     <span class="images-compare-label">상품2</span>
-                    <img src="kick/llgg.jpeg" style= "height:500px; width:600px;" alt="상품2">
+                    <img src="kick/kick2.png" style= "height:500px; width:600px;" alt="상품2">
                 </div>
             </div>
         </section>
 
+        <!--오른쪽 사이드바-->
         <article>
             <input type="checkbox" id="menuicon_right">
-        <label for="menuicon_right">
-            <i class="fa-solid fa-circle-left b"></i>
-        </label>
+            <label for="menuicon_right">
+                <i class="fa-solid fa-circle-left b"></i>
+            </label>
 
-        <div class="sidebar_b">
-            <div class="sidebar_right">
-                <div class="boxContainer_right">
-                    <table class="elementsContainer_right">
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="URL 입력(right)"
-                                class="search">
-                            </td>
-                            <td>
-                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="img_inputbox"></div>
+            <div class="sidebar_b">
+                <div class="sidebar_right">
+                    <div class="boxContainer_right">
+                        <table class="elementsContainer_right">
+                            <tr>
+                                <td>
+                                    <input type="text" placeholder="URL 입력(right)"
+                                    class="search">
+                                </td>
+                                <td>
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="img_inputbox"></div>
+
+                    </div>
                 </div>
             </div>
-        </div>
         </article>
 
         <footer></footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="assets/js/jquery.images-compare.js"></script>
-<script src="https://kit.fontawesome.com/b1cf78c6ff.js" crossorigin="anonymous"></script>
 <script>
-$(function () {
-    var imagesCompareElement = $('.js-img-compare').imagesCompare();
-    var imagesCompare = imagesCompareElement.data('imagesCompare');
-});
-</script>
-<!-- 다크모드 -->
-<script>
+    $(function () {
+        var imagesCompareElement = $('.js-img-compare').imagesCompare();
+        var imagesCompare = imagesCompareElement.data('imagesCompare');
+    });
+
+    /* 다크모드 */
     function customclick(){
         let element = document.body
         element.classList.toggle("dark-mode");
+    }
+
+    /*사진추가*/
+    function fImport(){
+        let txt = document.getElementById("txtImg");
+        let img = document.getElementById("imgBox");
+        img.innerHTML = "<img id='img1' style='width:100%;' src='" + txt.value + "' onclick='fCopy()'>";
+    }
+
+    /*사진복사*/
+    function fCopy(){
+        let lft = document.getElementById("lft");
+        let img = document.getElementById("img1");
+        lft.innerHTML = "<img style='width:100%;' src='" + img.src + "'>";
     }
 </script>
 </body>
