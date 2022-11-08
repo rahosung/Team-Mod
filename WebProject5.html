@@ -111,32 +111,32 @@
                         <div class="img_inputbox" style="overflow: auto;">
                             <ul style="margin-left: 5%; margin-top: 5%;">
                                 <li>
-                                    <img src="photo/shoes1.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes2.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes3.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes1.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes2.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes3.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
                                 <li>
-                                    <img src="photo/shoes4.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes5.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes6.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes4.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes5.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes6.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
                                 <li>
-                                    <img src="photo/shoes7.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes8.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes9.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes7.jpg" class="im"style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes8.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes9.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
                                 <li>
-                                    <img src="photo/shoes10.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes11.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes12.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes10.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes11.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes12.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
                                 <li>
-                                    <img src="photo/shoes13.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes14.jpg" style="height: 30%; width: 30%" alt="">
-                                    <img src="photo/shoes15.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes13.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes14.jpg" class="im" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes15.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
                                 <li>
-                                    <img src="photo/shoes16.jpg" style="height: 30%; width: 30%" alt="">
+                                    <img src="photo/shoes16.jpg" class="im" style="height: 30%; width: 30%" alt="">
                                 </li>
 
                             </ul>
@@ -179,6 +179,14 @@
     /*사진 버튼 클릭 시 비교창*/
     $('.click-img').click(function(){
         $(this).clone().appendTo('.clone-img');
+    })
+
+    /*이미지 클릭 시 포커싱*/
+    $(function(){
+        $(".im").click(function(){
+            $(".im").css("border", "none");
+            $(this).css("border", "3px solid black")
+        })
     })
 </script>
 </body>
