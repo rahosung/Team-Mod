@@ -1,4 +1,13 @@
 /* Images compare main container */
+
+* {
+    user-select: none;
+}
+
+body {
+    transition: background 0.2s ease-in-out;
+}
+
 .images-compare-container {
     display: inline-block;
     position: absolute;
@@ -18,6 +27,8 @@
     pointer-events: none;
     overflow: hidden;
 }
+
+
 
 /* Images compare back element */
 .images-compare-after {
@@ -335,7 +346,7 @@ input:checked + .slider::before{
 }
 
 .dark-mode{
-    background-color: black;
+    background-color: #101010;
     color:  white;
 }
 
@@ -343,9 +354,15 @@ input:checked + .slider::before{
     font-size: 50px;
 }
 
-.switch {
-    margin-left: 1800px;
+#dark {
+    display: flex;
+    justify-content: right;
 }
+
+.switch {
+    /* margin-left: 1800px; */
+}
+
 .tm {
     text-align: center;
     display: flex;
@@ -363,3 +380,97 @@ article {float: left; width: 10%; height: 700px;}
 footer {clear: both; width: 100%; height: 150px;}
 
 ul li {list-style-type: none; text-align: left;}
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+} */
+
+/* .image-compare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: var(--image-height);
+    background-color: #efefef;
+    border-radius: 60px;
+} */
+
+.js-img-compare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    background-image: linear-gradient(#f3f3f3, #ffffff), linear-gradient(to right, #0800ffaa, #65d3ffaa);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: background-image 0.2s ease-in-out;
+}
+
+.dark-mode .js-img-compare {
+    background-image: linear-gradient(#202020, #222222), linear-gradient(to right, #0800ffaa, #65d3ffaa);
+}
+
+.image-area {
+    position: relative;
+    width: 600px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-area > .image-desc {
+    position: absolute;
+    color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    z-index: 1;
+}
+
+.image-area > img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid white;
+    width: 600px;
+    height: 100%;
+}
+
+.image-area > .image2 {
+    clip-path: inset(0 50% 0 0);
+}
+
+.image-area > .image-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+}
+
+.image-area > .image-slider::-webkit-slider-thumb {
+    appearance: none;
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+}
+
+.image-area > .image-line {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    left: 50%;
+}
