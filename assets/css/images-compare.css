@@ -202,7 +202,8 @@ input[id="menuicon"]:checked + label {
 .sidebar_a{
     width: 700px;
     height: 100%;
-    background: gold;
+    background: -webkit-linear-gradient(to right, #67b3f6, #1b53c2);
+    background: linear-gradient(to right, #1b53c2, #67b3f6);
     position:fixed;
     top: 0;
     left: -900px;
@@ -240,7 +241,8 @@ input[id="menuicon_right"]:checked + label {
 .sidebar_b{
     width: 700px;
     height: 100%;
-    background: gold;
+    background: -webkit-linear-gradient(to right, #67b3f6, #1b53c2);
+    background: linear-gradient(to right, #67b3f6, #1b53c2);
     position:fixed;
     top: 0px;
     right: -900px;
@@ -257,6 +259,10 @@ input[id="menuicon_right"]:checked +label +div {
     margin: -25px;
     margin-top: 35px;
     background-color: white;
+    border: 3px solid transparent;
+    background-image: linear-gradient(#f3f3f3, #ffffff), linear-gradient(to right, #0800ffaa, #65d3ffaa);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 .add-button {
@@ -339,6 +345,13 @@ input:checked + .slider::before{
 
 .switch {
     margin-left: 1800px;
+}
+.tm {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
 }
 
 * {margin: 0; padding: 0;}

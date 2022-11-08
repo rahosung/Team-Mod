@@ -1,0 +1,9 @@
+.js-img-compare {
+    position: relative;
+    float: left;
+    border: 3px solid rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.js-img-compare

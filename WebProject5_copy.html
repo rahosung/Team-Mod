@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>layout2</title>
     <link rel="stylesheet" href="assets/css/images-compare.css"/>
-    <link rel="stylesheet" href="lie.py">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -73,20 +74,8 @@
             background-image: linear-gradient(#f3f3f3, #ffffff), linear-gradient(to right, #0800ffaa, #65d3ffaa);
             background-origin: border-box;
             background-clip: content-box, border-box;">
-            <div style="display: none;" class="click-img">
-                    <span class="images-compare-label">상품1</span>
-                    <div id="lft" style="width: 100%; text-align:center">
-                        <img src="kick/llgg.jpeg" style= "height: 706px; width: 100%; display: inline-block;" alt="상품1">
-                    </div>
-                    <div class="clone-img"></div>
-                </div>
-
-                <div>
-                    <span class="images-compare-label">상품2</span>
-                    <div style="width: 100%; text-align:center">
-                        <img src="kick/moddd.jpeg" style= "height: 706px; width: 100%; display: inline-block;" alt="상품2">
-                    </div>
-                </div>
+                <img src="kick/llgg.jpeg" style= "height: 706px; width: 100%; display: inline-block;" alt="상품1">
+                <img src="kick/moddd.jpeg" style= "height: 706px; width: 100%; display: inline-block;" alt="상품2">
             </div>
         </section>
 
@@ -155,10 +144,10 @@
     </div>
 
 <script>
-    $(function () {
-        var imagesCompareElement = $('.js-img-compare').imagesCompare();
-        var imagesCompare = imagesCompareElement.data('imagesCompare');
-    });
+    // $(function () {
+    //     var imagesCompareElement = $('.js-img-compare').imagesCompare();
+    //     var imagesCompare = imagesCompareElement.data('imagesCompare');
+    // });
 
     /* 다크모드 */
     function customclick(){
