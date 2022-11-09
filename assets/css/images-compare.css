@@ -482,3 +482,8 @@ ul li {list-style-type: none; text-align: left;}
     align-items: center;
     font-size: 20px;
 }
+
+#logo {
+    text-align: center;
+    padding: 1%;
+}
