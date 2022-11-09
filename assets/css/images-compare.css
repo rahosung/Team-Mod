@@ -422,7 +422,7 @@ ul li {list-style-type: none; text-align: left;}
 
 .image-area {
     position: relative;
-    width: 600px;
+    width: 1200px;
     height: 100%;
     overflow: hidden;
 }
@@ -441,7 +441,7 @@ ul li {list-style-type: none; text-align: left;}
     left: 50%;
     transform: translateX(-50%);
     border: 2px solid white;
-    width: 600px;
+    width: max-content;
     height: 100%;
 }
 
