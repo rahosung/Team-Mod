@@ -1,5 +1,4 @@
 /* Images compare main container */
-
 * {
     user-select: none;
 }
@@ -422,7 +421,7 @@ ul li {list-style-type: none; text-align: left;}
 
 .image-area {
     position: relative;
-    width: 1200px;
+    width: 820.66px;
     height: 100%;
     overflow: hidden;
 }
@@ -441,7 +440,7 @@ ul li {list-style-type: none; text-align: left;}
     left: 50%;
     transform: translateX(-50%);
     border: 2px solid white;
-    width: max-content;
+    width: 820.66px;
     height: 100%;
 }
 
@@ -455,7 +454,6 @@ ul li {list-style-type: none; text-align: left;}
     height: 100%;
     margin: 0;
     outline: none;
-    appearance: none;
     background-color: transparent;
 }
 
@@ -471,7 +469,6 @@ ul li {list-style-type: none; text-align: left;}
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background-color: black;
     left: 50%;
 }
 
